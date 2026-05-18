@@ -104,7 +104,7 @@ img {
   justify-content: center;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 15px;
+  border-radius: 14px;
   color: #fff;
   background:
     linear-gradient(120deg, rgba(255, 255, 255, 0.22), transparent 30%, transparent 68%, rgba(255, 255, 255, 0.16)),
@@ -116,23 +116,23 @@ img {
     inset 0 0 0 4px rgba(11, 105, 44, 0.18);
   cursor: pointer;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size: clamp(0.96rem, 3.7vw, 1.34rem);
-  font-weight: 800;
+  font-size: clamp(0.78rem, 2.95vw, 1.04rem);
+  font-weight: 760;
   letter-spacing: 0;
   line-height: 1;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  animation: v2CtaPulse 1.75s ease-in-out infinite;
+  animation: v2CtaPulse 1.35s ease-in-out infinite;
   transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .v2-hotspot::before {
   content: "";
-  width: 1.38em;
-  height: 1.38em;
-  margin-right: 0.55em;
+  width: 1.02em;
+  height: 1.02em;
+  margin-right: 0.36em;
   background: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 4 13c0-5 4-9 12-10 0 8-3 14-10 14'/%3E%3Cpath d='M7 17c2-3 4-5 8-7'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 4 13c0-5 4-9 12-10 0 8-3 14-10 14'/%3E%3Cpath d='M7 17c2-3 4-5 8-7'/%3E%3C/svg%3E") center / contain no-repeat;
@@ -167,26 +167,28 @@ img {
 }
 
 .v2-hotspot--hero {
-  left: 8.35%;
-  top: 48.2%;
-  width: 52.8%;
-  height: 5.65%;
+  left: 9.4%;
+  top: 48.55%;
+  width: 50%;
+  height: 5.05%;
 }
 
 .v2-hotspot--app {
-  left: 10.2%;
-  top: 90.4%;
-  width: 79.6%;
-  height: 5.6%;
+  left: 24.8%;
+  top: 35.95%;
+  width: 50.4%;
+  height: 3.95%;
+  border-radius: 14px;
+  font-size: clamp(0.72rem, 2.55vw, 0.94rem);
 }
 
 .v2-hotspot--offer {
-  left: 8.75%;
-  top: 35.85%;
-  width: 82.5%;
-  height: 8.25%;
-  border-radius: 18px;
-  font-size: clamp(1.08rem, 4.45vw, 1.48rem);
+  left: 10%;
+  top: 36.3%;
+  width: 80%;
+  height: 6.9%;
+  border-radius: 14px;
+  font-size: clamp(0.86rem, 3.45vw, 1.14rem);
 }
 
 .v2-hotspot--hero,
@@ -203,7 +205,7 @@ img {
     inset 0 2px 0 rgba(255, 255, 255, 0.36),
     inset 0 0 0 4px rgba(11, 105, 44, 0.18);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
-  animation: v2CtaPulse 1.75s ease-in-out infinite;
+  animation: v2CtaPulse 1.35s ease-in-out infinite;
 }
 
 .v2-hotspot--hero::before,
@@ -333,10 +335,23 @@ img {
   0%,
   100% {
     transform: scale(1);
+    filter: brightness(1);
+    box-shadow:
+      0 14px 24px rgba(11, 97, 39, 0.26),
+      0 5px 0 #086c31,
+      inset 0 2px 0 rgba(255, 255, 255, 0.36),
+      inset 0 0 0 4px rgba(11, 105, 44, 0.18);
   }
 
   50% {
-    transform: scale(1.025);
+    transform: scale(1.045);
+    filter: brightness(1.1);
+    box-shadow:
+      0 0 0 7px rgba(61, 199, 122, 0.2),
+      0 18px 31px rgba(11, 97, 39, 0.36),
+      0 5px 0 #086c31,
+      inset 0 2px 0 rgba(255, 255, 255, 0.44),
+      inset 0 0 0 4px rgba(11, 105, 44, 0.18);
   }
 }
 
@@ -379,24 +394,34 @@ img {
   }
 
   .v2-hotspot--hero {
-    left: 8.2%;
-    top: 48.45%;
-    width: 53%;
-    height: 5.2%;
+    left: 9.5%;
+    top: 48.55%;
+    width: 49.5%;
+    height: 5%;
     border-radius: 10px;
-    font-size: clamp(0.72rem, 3.15vw, 0.96rem);
+    font-size: clamp(0.62rem, 2.75vw, 0.82rem);
+  }
+
+  .v2-hotspot--app {
+    left: 24.8%;
+    top: 35.95%;
+    width: 50.4%;
+    height: 3.9%;
+    border-radius: 10px;
+    font-size: clamp(0.56rem, 2.35vw, 0.74rem);
   }
 
   .v2-hotspot--offer {
-    left: 8.6%;
-    top: 36.05%;
-    width: 82.8%;
-    height: 7.2%;
+    left: 10%;
+    top: 36.35%;
+    width: 80%;
+    height: 6.75%;
     border-radius: 12px;
-    font-size: clamp(0.9rem, 4.35vw, 1.18rem);
+    font-size: clamp(0.72rem, 3.05vw, 0.94rem);
   }
 
   .v2-hotspot--hero,
+  .v2-hotspot--app,
   .v2-hotspot--offer {
     box-shadow:
       0 8px 14px rgba(11, 97, 39, 0.24),
@@ -406,9 +431,9 @@ img {
   }
 
   .v2-hotspot::before {
-    width: 1.08em;
-    height: 1.08em;
-    margin-right: 0.38em;
+    width: 0.95em;
+    height: 0.95em;
+    margin-right: 0.32em;
   }
 
   .v2-faq {
