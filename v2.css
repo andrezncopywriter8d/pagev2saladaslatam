@@ -338,6 +338,17 @@ img {
   }
 }
 
+@keyframes v2TapPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 178, 96, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgba(39, 178, 96, 0.22);
+  }
+}
+
 @media (min-width: 942px) {
   .v2-shell {
     border-inline: 1px solid rgba(255, 255, 255, 0.08);
@@ -362,6 +373,34 @@ img {
   .v2-hotspot--offer {
     left: 8.9%;
     width: 82.3%;
+  }
+
+  .v2-hotspot--hero,
+  .v2-hotspot--app,
+  .v2-hotspot--offer {
+    border: 0;
+    color: transparent;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    animation: v2TapPulse 1.65s ease-in-out infinite;
+  }
+
+  .v2-hotspot--hero::before,
+  .v2-hotspot--hero::after,
+  .v2-hotspot--app::before,
+  .v2-hotspot--app::after,
+  .v2-hotspot--offer::before,
+  .v2-hotspot--offer::after {
+    display: none;
+  }
+
+  .v2-hotspot--hero:hover,
+  .v2-hotspot--app:hover,
+  .v2-hotspot--offer:hover {
+    filter: none;
+    transform: none;
+    box-shadow: none;
   }
 
   .v2-faq {

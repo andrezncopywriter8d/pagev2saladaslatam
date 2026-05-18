@@ -28,10 +28,29 @@ function removeCartPandaLegalFootnote() {
       text.includes("review legal terms of use") &&
       text.includes("privacy policy") &&
       text.includes("contact us");
+    const isSecureOrderBadge =
+      text.includes("cartpanda") &&
+      (text.includes("secure order") || text.includes("security"));
 
-    if (!isLegalFooter) return;
+    if (!isLegalFooter && !isSecureOrderBadge) return;
     if (node.nodeType === Node.TEXT_NODE) node.remove();
     if (node.nodeType === Node.ELEMENT_NODE && !node.classList?.contains("v2-shell")) node.remove();
+  });
+
+  document.querySelectorAll("body > img, body > picture, body > iframe, body > div, body > a").forEach((element) => {
+    if (element.classList?.contains("v2-shell") || element.classList?.contains("v2-floating")) return;
+
+    const text = element.textContent?.replace(/\s+/g, " ").trim().toLowerCase() || "";
+    const media = Array.from(element.querySelectorAll?.("img, iframe") || [])
+      .map((item) => `${item.getAttribute("src") || ""} ${item.getAttribute("alt") || ""}`.toLowerCase())
+      .join(" ");
+    const selfMedia = `${element.getAttribute?.("src") || ""} ${element.getAttribute?.("alt") || ""}`.toLowerCase();
+    const signature = `${text} ${media} ${selfMedia}`;
+    const isCartPandaBadge =
+      signature.includes("cartpanda") &&
+      (signature.includes("secure") || signature.includes("security") || signature.includes("order"));
+
+    if (isCartPandaBadge) element.remove();
   });
 }
 
