@@ -88,10 +88,18 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-revealItems.forEach((item) => {
-  item.classList.add("is-visible");
+revealItems.forEach((item, index) => {
+  if (index === 0) {
+    item.classList.add("is-visible");
+    return;
+  }
+
   revealObserver.observe(item);
 });
+
+window.setTimeout(() => {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}, 1800);
 
 function updateFloatingButton() {
   if (!floatingBuy) return;
