@@ -176,18 +176,9 @@ img {
   font-size: clamp(1.08rem, 4.45vw, 1.48rem);
 }
 
-.v2-hotspot--final {
-  left: 46.1%;
-  top: 25.22%;
-  width: 44.2%;
-  height: 4.55%;
-  font-size: clamp(0.72rem, 2.45vw, 0.95rem);
-}
-
 .v2-hotspot--hero,
 .v2-hotspot--app,
-.v2-hotspot--offer,
-.v2-hotspot--final {
+.v2-hotspot--offer {
   border: 1px solid rgba(255, 255, 255, 0.58);
   color: #fff;
   background:
@@ -207,16 +198,13 @@ img {
 .v2-hotspot--app::before,
 .v2-hotspot--app::after,
 .v2-hotspot--offer::before,
-.v2-hotspot--offer::after,
-.v2-hotspot--final::before,
-.v2-hotspot--final::after {
+.v2-hotspot--offer::after {
   display: block;
 }
 
 .v2-hotspot--hero:hover,
 .v2-hotspot--app:hover,
-.v2-hotspot--offer:hover,
-.v2-hotspot--final:hover {
+.v2-hotspot--offer:hover {
   filter: saturate(1.08) brightness(1.04);
   transform: translateY(-2px) scale(1.012);
   box-shadow:
@@ -374,12 +362,6 @@ img {
   .v2-hotspot--offer {
     left: 8.9%;
     width: 82.3%;
-  }
-
-  .v2-hotspot--final {
-    left: 46.1%;
-    width: 44.2%;
-    font-size: clamp(0.62rem, 2.35vw, 0.82rem);
   }
 
   .v2-faq {
