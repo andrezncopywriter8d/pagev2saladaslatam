@@ -367,40 +367,35 @@ img {
 
   .v2-hotspot--hero {
     left: 8.2%;
+    top: 48.45%;
     width: 53%;
+    height: 5.2%;
+    border-radius: 10px;
+    font-size: clamp(0.72rem, 3.15vw, 0.96rem);
   }
 
   .v2-hotspot--offer {
-    left: 8.9%;
-    width: 82.3%;
+    left: 8.6%;
+    top: 36.05%;
+    width: 82.8%;
+    height: 7.2%;
+    border-radius: 12px;
+    font-size: clamp(0.9rem, 4.35vw, 1.18rem);
   }
 
   .v2-hotspot--hero,
-  .v2-hotspot--app,
   .v2-hotspot--offer {
-    border: 0;
-    color: transparent;
-    background: transparent;
-    box-shadow: none;
-    text-shadow: none;
-    animation: v2TapPulse 1.65s ease-in-out infinite;
+    box-shadow:
+      0 8px 14px rgba(11, 97, 39, 0.24),
+      0 3px 0 #086c31,
+      inset 0 1px 0 rgba(255, 255, 255, 0.34),
+      inset 0 0 0 3px rgba(11, 105, 44, 0.16);
   }
 
-  .v2-hotspot--hero::before,
-  .v2-hotspot--hero::after,
-  .v2-hotspot--app::before,
-  .v2-hotspot--app::after,
-  .v2-hotspot--offer::before,
-  .v2-hotspot--offer::after {
-    display: none;
-  }
-
-  .v2-hotspot--hero:hover,
-  .v2-hotspot--app:hover,
-  .v2-hotspot--offer:hover {
-    filter: none;
-    transform: none;
-    box-shadow: none;
+  .v2-hotspot::before {
+    width: 1.08em;
+    height: 1.08em;
+    margin-right: 0.38em;
   }
 
   .v2-faq {
