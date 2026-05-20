@@ -76,30 +76,32 @@ offerLinks.forEach((link) => {
   });
 });
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
         revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
+      });
+    },
+    {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.16,
+    }
+  );
 
-revealItems.forEach((item, index) => {
-  if (index === 0) {
-    item.classList.add("is-visible");
-    return;
-  }
+  revealItems.forEach((item, index) => {
+    if (index === 0) {
+      item.classList.add("is-visible");
+      return;
+    }
 
-  revealObserver.observe(item);
-});
-
-window.setTimeout(() => {
+    revealObserver.observe(item);
+  });
+} else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
-}, 1800);
+}
 
 function updateFloatingButton() {
   if (!floatingBuy) return;
